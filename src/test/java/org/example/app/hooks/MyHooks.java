@@ -8,6 +8,7 @@ import org.example.app.utils.ConfigReader;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Parameters;
 
 import java.time.Duration;
 import java.util.Properties;
@@ -30,9 +31,11 @@ public class MyHooks {
 	}
 	
 	@Before(order=1)
+
 	public void launchBrowser() {
-		String browser=properties.getProperty("browser");
-		driverFactory=new DriverFactory();
+		String browser = System.getProperty("Browser");
+		//tring browser=properties.getProperty("browser");
+//		driverFactory=new DriverFactory();
 		driver= DriverFactory.init_driver(browser);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
