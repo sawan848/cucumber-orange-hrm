@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" verbose="2" >
+	<test name="AppTest.java">
+		<classes>
+			<class name="org.example.app.runner.LoginTestRunner"/>
+
+		</classes>
+	</test>
+</suite>
